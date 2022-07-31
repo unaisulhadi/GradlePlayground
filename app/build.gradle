@@ -5,7 +5,7 @@ plugins {
 
 android {
 
-    def Properties properties = new Properties()
+    def properties = new Properties()
     properties.load(project.rootProject.file("credentials.properties").newDataInputStream())
 
     compileSdk 32
@@ -20,7 +20,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "API_KEY", "\"my_api_key\""
-        buildConfigField "String", "PROPERTIES_API_KEY", "\""+properties.getProperty("api_key")+"\""
+        buildConfigField "String", "PROPERTIES_API_KEY", "\""+properties["api_key"]+"\""
     }
 
 

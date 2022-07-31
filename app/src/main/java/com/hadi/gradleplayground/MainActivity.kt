@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         // Read API keys from credentials.properties
         tv4.text = BuildConfig.PROPERTIES_API_KEY
 
-        // Read API keys from credentials.properties
+        // Read API keys from credentials.properties from flavors
         tv5.text = BuildConfig.ANOTHER_API_KEY
 
 
