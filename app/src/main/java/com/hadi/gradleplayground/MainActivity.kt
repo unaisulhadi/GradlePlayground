@@ -1,5 +1,6 @@
 package com.hadi.gradleplayground
 
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -37,6 +38,12 @@ class MainActivity : AppCompatActivity() {
         // Read API keys from credentials.properties from flavors
         tv5.text = BuildConfig.ANOTHER_API_KEY
 
+        // Read meta-data from Manifest
+        packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+            .apply {
+                val apiKey = metaData.getString("com.google.android.geo.API_KEY")
+                tv6.text = apiKey
+            }
 
     }
 
